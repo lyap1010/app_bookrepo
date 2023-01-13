@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "7d050a01-165c-4e30-8702-a01794a89b33",
+		"name": "bookstore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Books",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "userPass",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "JSESSIONID",
+						"value": "42CB3F123724F69246508D0071ACB67D",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/books",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Book",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "adminPass",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isbn\": \"ISBN-BOOK3\",\r\n    \"title\": \"New Book\",\r\n    \"year\": 2020,\r\n    \"price\": 15.0,\r\n    \"genre\": \"Fiction\",\r\n    \"authors\": [\r\n        {\r\n            \"bookIsbn\": \"ISBN-BOOK3\",\r\n            \"name\": \"NewBook AuthorAalala\",\r\n            \"birthday\": \"2023-01-12T13:54:41.475+00:00\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/book",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Book",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "userPass",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"New Book WITH UPDATED NAME\",\r\n    \"year\": 2020,\r\n    \"price\": 150.0,\r\n    \"genre\": \"Fiction\",\r\n    \"authors\": [\r\n        {\r\n            \"bookIsbn\": \"ISBN-BOOK3\",\r\n            \"id\": 5,\r\n            \"name\": \"Updated Author Name\",\r\n            \"birthday\": \"2023-01-12T13:54:41.475+00:00\"\r\n        },\r\n        {\r\n            \"bookIsbn\": \"ISBN-BOOK3\",\r\n            \"name\": \"New Author\",\r\n            \"birthday\": \"2023-01-12T13:54:41.475+00:00\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/book/ISBN-BOOK3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book",
+						"ISBN-BOOK3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find By Title",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "userPass",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/search?title=Year Book - 2020",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"search"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Year Book - 2020"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find By Author",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "userPass",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/search?author=Author ABC",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"search"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "Author ABC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete by User",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "userPass",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/book/ISBN-BOOK3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book",
+						"ISBN-BOOK3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete by Admin",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "adminPass",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/book/ISBN-BOOK3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book",
+						"ISBN-BOOK3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
