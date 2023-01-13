@@ -18,6 +18,7 @@ Run following test cases by the imported script in postman:
 
 TC1) Get All Books
 1) Execute "Get All Books" in the postman script
+
 Expected: it should return 2 books with IDs: "ISBN-BOOK1", "ISBN-BOOK2"
 
 TC2) Add New Book
