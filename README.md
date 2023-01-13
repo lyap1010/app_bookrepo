@@ -2,7 +2,7 @@
 
 REST API paths on /api/** needs to be authenticated:
 2 types of user:
-- username: user, password: userPass (cannot delete book, but all /api operationss ok)
+- username: user, password: userPass (cannot delete book, but all /api operations ok)
 - username: admin, password: adminPass (can delete book
 
 Data are persisted only in In-memory Database: H2
